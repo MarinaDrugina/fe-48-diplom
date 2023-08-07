@@ -1,7 +1,7 @@
 {
    "name": "fe-48-diplom",
    "version": "0.1.0",
-   "homepage": "https://marinadrugina.github.io/fe-48-diplom/",
+   "homepage": "https://marinadrugina.github.io/fe-48-diplom",
    "private": true,
    "dependencies": {
       "@ant-design/icons": "^4.7.0",
