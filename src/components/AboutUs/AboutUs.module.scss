@@ -5,6 +5,15 @@
    min-height: 51rem;
    background: var(--color-main-light);
    color: var(--color-main-dark);
+
+   @media screen and (max-width: 1440px) {
+      padding-left: 16rem;
+   }
+
+   @media screen and (max-width: 968px) {
+      padding: 4rem 2rem;
+   }
+
    &__title {
       @include title;
    }
@@ -17,6 +26,11 @@
       & span {
          padding-left: 1.8rem;
          @include font-no-color(var(--fw-4), var(--fs-24), var(--fh-28));
+
+         @media screen and (max-width: 968px) {
+            font-size: 1.75rem;
+            line-height: normal;
+         }
       }
 
       & span:not(:last-child) {

@@ -1,9 +1,21 @@
 @import '../../scss/mixins';
 
 .wrapper {
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
+   // display: flex;
+   // justify-content: space-between;
+   // align-items: center;
+
+   display: grid;
+   grid-template-columns: repeat(2, auto);
+
+   @media screen and (max-width: 968px) {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      justify-content: center;
+      padding-top: 2rem;
+      padding-inline: 1rem;
+   }
 
    .title {
       @include font(
@@ -12,7 +24,21 @@
          var(--fh-84),
          var(--color-main-light)
       );
-      width: 51rem;
+      flex-flow: column;
+      display: flex;
+      justify-content: center;
+
+      @media screen and (max-width: 1440px) {
+         font-size: var(--fs-52);
+         line-height: normal;
+      }
+
+      @media screen and (max-width: 968px) {
+         text-align: center;
+         font-size: 4rem;
+         line-height: normal;
+      }
+
       &-bold {
          font-weight: var(--fw-7);
       }

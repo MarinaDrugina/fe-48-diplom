@@ -13,11 +13,11 @@ import SubscribeItems from './SubscribeItems/SubscribeItems';
 import Logo from '../Logo/Logo';
 import PopUp from '../../PopUp/PopUp';
 
-import phone from './icons/contact-us/phone.svg';
-import email from './icons/contact-us/email.svg';
-import skype from './icons/contact-us/skype.svg';
-import location from './icons/contact-us/location.svg';
-import goUp from './icons/go-up.svg';
+import phone from '../../../assets/images/contact-us/phone.svg';
+import email from '../../../assets/images/contact-us/email.svg';
+import skype from '../../../assets/images/contact-us/skype.svg';
+import location from '../../../assets/images/contact-us/location.svg';
+import goUp from '../../../assets/images/go-up.svg';
 
 function Footer() {
    const [loading, setLoading] = useState(false);

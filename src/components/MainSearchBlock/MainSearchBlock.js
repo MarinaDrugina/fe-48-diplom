@@ -13,9 +13,9 @@ import {
    selectDepartureDate,
 } from '../../store/slices/searchSlice';
 
-import location from './img/location.svg';
-import arrows from './img/arrows.svg';
-import date from './img/date.svg';
+import location from '../../assets/images/location.svg';
+import arrows from '../../assets/images/arrows.svg';
+import date from '../../assets/images/date.svg';
 
 import consts from './consts';
 import links from '../../data/links';

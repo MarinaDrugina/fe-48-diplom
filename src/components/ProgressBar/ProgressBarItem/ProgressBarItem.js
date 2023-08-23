@@ -3,12 +3,13 @@ import PropTypes from 'prop-types';
 
 import styles from './ProgressBarItem.module.scss';
 
-import vector from '../img/veсtor.svg';
+// import vector from '../img/veсtor.svg';
+// import vector from '../img/';
 
 function ProgressBarItem({ step, number, id, name, totalSteps, img }) {
-   const imgClasses = `${styles.breaker} ${
-      id <= step ? `${styles['breaker-done']}` : ''
-   } ${id === step ? `${styles['breaker-cut']}` : ''}`;
+   // const imgClasses = `${styles.breaker} ${
+   //    id <= step ? `${styles['breaker-done']}` : ''
+   // } ${id === step ? `${styles['breaker-cut']}` : ''}`;
 
    return (
       <>
@@ -26,7 +27,7 @@ function ProgressBarItem({ step, number, id, name, totalSteps, img }) {
          </div>
          {id < totalSteps && (
             <div>
-               <img className={imgClasses} src={vector} alt="icon - vector" />
+               {/* <img className={imgClasses} src={vector} alt="icon - vector" /> */}
             </div>
          )}
       </>

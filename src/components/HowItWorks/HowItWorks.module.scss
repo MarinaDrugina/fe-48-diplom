@@ -8,11 +8,30 @@
    color: var(--color-main-light);
    border-top: solid 5rem var(--color-yellow-orange);
    background-image: url('./background-middle.png');
+
+   @media screen and (max-width: 1440px) {
+      padding-inline: 10rem;
+   }
+
+   @media screen and (max-width: 968px) {
+      padding: 4rem 2rem;
+      background-size: cover;
+      background-repeat: no-repeat;
+      min-width: none;
+      max-height: none;
+      max-height: none;
+   }
+
    &__wrapperTop {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
       margin-bottom: 10rem;
+
+      @media screen and (max-width: 968px) {
+         flex-flow: column;
+         row-gap: 1.5rem;
+      }
    }
    &__title {
       @include title;
@@ -22,10 +41,22 @@
       @include font-no-color(var(--fw-7), var(--fs-24), var(--fh-28));
       padding: 1.5rem 7.5rem;
       margin-left: 3.3rem;
+
+      @media screen and (max-width: 968px) {
+         font-size: 1.5rem;
+         line-height: normal;
+         padding: 1rem 5rem;
+         margin-left: 0;
+      }
    }
    &__steps {
       display: flex;
       justify-content: space-between;
+
+      @media screen and (max-width: 968px) {
+         flex-flow: column;
+         align-items: center;
+      }
    }
 }
 

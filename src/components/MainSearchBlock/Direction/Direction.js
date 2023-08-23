@@ -27,7 +27,18 @@ function Direction({ name, placeholder, className }) {
    const departureCity = useSelector(selectDepartureCity);
    const arrivalCity = useSelector(selectArrivalCity);
    const [inputValue, setInputValue] = useState('');
-   const [citiesList, setCitiesList] = useState([]);
+   const [citiesList, setCitiesList] = useState([
+      { label: 'Москва', value: 'Москва' },
+      { label: 'Санкт-Петербург', value: 'Санкт-Петербург' },
+      { label: 'Новосибирск', value: 'Новосибирск' },
+      { label: 'Екатеринбург', value: 'Екатеринбург' },
+      { label: 'Казань', value: 'Казань' },
+      { label: 'Нижний Новгород', value: 'Нижний Новгород' },
+      { label: 'Челябинск', value: 'Челябинск' },
+      { label: 'Самара', value: 'Самара' },
+      { label: 'Уфа', value: 'Уфа' },
+      { label: 'Ростов-на-Дону', value: 'Ростов-на-Дону' },
+   ]);
 
    const debouncedSearch = useDebounce(inputValue, 500);
 

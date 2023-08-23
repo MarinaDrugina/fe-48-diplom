@@ -1,16 +1,16 @@
 import React, { useReducer } from 'react';
 
-import youtubeActive from '../icons/subscribe/clicked/youtube.svg';
-import linkedinActive from '../icons/subscribe/clicked/linkedin.svg';
-import googleActive from '../icons/subscribe/clicked/google.svg';
-import facebookActive from '../icons/subscribe/clicked/facebook.svg';
-import twitterActive from '../icons/subscribe/clicked/twitter.svg';
+import youtubeActive from '../../../../assets/images/subscribe/clicked/youtube.svg';
+import linkedinActive from '../../../../assets/images/subscribe/clicked/linkedin.svg';
+import googleActive from '../../../../assets/images/subscribe/clicked/google.svg';
+import facebookActive from '../../../../assets/images/subscribe/clicked/facebook.svg';
+import twitterActive from '../../../../assets/images/subscribe/clicked/twitter.svg';
 
-import youtube from '../icons/subscribe/regular/youtube.svg';
-import linkedin from '../icons/subscribe/regular/linkedin.svg';
-import google from '../icons/subscribe/regular/google.svg';
-import facebook from '../icons/subscribe/regular/facebook.svg';
-import twitter from '../icons/subscribe/regular/twitter.svg';
+import youtube from '../../../../assets/images/subscribe/regular/youtube.svg';
+import linkedin from '../../../../assets/images/subscribe/regular/linkedin.svg';
+import google from '../../../../assets/images/subscribe/regular/google.svg';
+import facebook from '../../../../assets/images/subscribe/regular/facebook.svg';
+import twitter from '../../../../assets/images/subscribe/regular/twitter.svg';
 
 import styles from './SubscribeItems.module.scss';
 import contacts from '../../../../data/contacts';

@@ -6,6 +6,15 @@
    min-height: 75rem;
    background: var(--color-main-light);
    color: var(--color-main-dark);
+
+   @media screen and (max-width: 1440px) {
+      padding-inline: 10rem;
+   }
+
+   @media screen and (max-width: 968px) {
+      padding: 4rem 2rem;
+   }
+
    &__title {
       @include title;
    }
@@ -13,6 +22,11 @@
       margin-top: 8rem;
       display: flex;
       flex-wrap: wrap;
+
+      @media screen and (max-width: 968px) {
+         flex-flow: column;
+         row-gap: 4rem;
+      }
    }
 }
 

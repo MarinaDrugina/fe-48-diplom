@@ -7,5 +7,12 @@
       &:last-child {
          margin-right: 0;
       }
+
+      & img {
+         @media screen and (max-width: 968px) {
+            width: 2rem;
+            aspect-ratio: 1 / 1;
+         }
+      }
    }
 }

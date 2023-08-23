@@ -4,10 +4,16 @@
    display: flex;
 
    &__avatar {
-      width: 12rem;
-      height: 12rem;
+      max-width: 12rem;
+      max-height: 12rem;
       margin-right: 2rem;
       position: relative;
+
+      @media screen and (max-width: 968px) {
+         width: 12rem;
+         height: 12rem;
+      }
+
       > img {
          position: absolute;
          top: 0;
