@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/fe-48-diplom/static/css/main.50844db1.css",
-    "main.js": "/fe-48-diplom/static/js/main.9740991d.js",
+    "main.css": "/fe-48-diplom/static/css/main.c1c4de22.css",
+    "main.js": "/fe-48-diplom/static/js/main.4a87e965.js",
     "static/media/background-success.png": "/fe-48-diplom/static/media/background-success.f4c572a064afd726e932.png",
     "static/media/background-main.png": "/fe-48-diplom/static/media/background-main.342962d46ac521ac491d.png",
     "static/media/background-middle.png": "/fe-48-diplom/static/media/background-middle.36e82725212d69a1c278.png",
@@ -74,17 +74,16 @@
     "static/media/1.svg": "/fe-48-diplom/static/media/1.7ad114a908b08ff6758b73b3b866c03a.svg",
     "static/media/first-active.svg": "/fe-48-diplom/static/media/first-active.21899fd0d86bc1eec43e7c83e7ae6054.svg",
     "static/media/first.svg": "/fe-48-diplom/static/media/first.2f216c4a3de2b946bc67ea048c2fc6d6.svg",
-    "static/media/veсtor.svg": "/fe-48-diplom/static/media/veсtor.468a2fa69568f0c0621a0904d678a5b0.svg",
     "static/media/4-first-class.svg": "/fe-48-diplom/static/media/4-first-class.331955b821e33f471c9d75058937ca74.svg",
     "static/media/on.svg": "/fe-48-diplom/static/media/on.02aaf7e04582b071924e66abdce135dc.svg",
     "static/media/off.svg": "/fe-48-diplom/static/media/off.78444e4ad77121b5751a189b447e409b.svg",
     "static/media/default.less": "/fe-48-diplom/static/media/default.003f90b383291c3b90da.less",
     "static/media/index.less": "/fe-48-diplom/static/media/index.512735b3dccd7d4b3088.less",
-    "main.50844db1.css.map": "/fe-48-diplom/static/css/main.50844db1.css.map",
-    "main.9740991d.js.map": "/fe-48-diplom/static/js/main.9740991d.js.map"
+    "main.c1c4de22.css.map": "/fe-48-diplom/static/css/main.c1c4de22.css.map",
+    "main.4a87e965.js.map": "/fe-48-diplom/static/js/main.4a87e965.js.map"
   },
   "entrypoints": [
-    "static/css/main.50844db1.css",
-    "static/js/main.9740991d.js"
+    "static/css/main.c1c4de22.css",
+    "static/js/main.4a87e965.js"
   ]
 }
