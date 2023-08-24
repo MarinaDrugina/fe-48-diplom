@@ -1,136 +1,133 @@
-import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { AutoComplete } from 'antd';
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { AutoComplete } from "antd";
 
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-import PopUP from '../../PopUp/PopUp';
+import PopUP from "../../PopUp/PopUp";
 
-import useDebounce from '../../../hooks/useDebounce';
+import useDebounce from "../../../hooks/useDebounce";
 
 import {
-   changeSearchFields,
-   selectDepartureCity,
-   selectArrivalCity,
-} from '../../../store/slices/searchSlice';
-import { changeOffset, setCurrentPage } from '../../../store/slices/sortSlice';
-import { removeTrainData } from '../../../store/slices/trainSlice';
+  changeSearchFields,
+  selectDepartureCity,
+  selectArrivalCity,
+} from "../../../store/slices/searchSlice";
+import { changeOffset, setCurrentPage } from "../../../store/slices/sortSlice";
+import { removeTrainData } from "../../../store/slices/trainSlice";
 
-import consts from '../consts';
+import consts from "../consts";
 
-import 'antd/dist/antd.css';
-import './Direction.scss';
+import "antd/dist/antd.css";
+import "./Direction.scss";
 
 function Direction({ name, placeholder, className }) {
-   const dispatch = useDispatch();
-   const [error, setError] = useState(null);
-   const departureCity = useSelector(selectDepartureCity);
-   const arrivalCity = useSelector(selectArrivalCity);
-   const [inputValue, setInputValue] = useState('');
-   const [citiesList, setCitiesList] = useState([
-      { label: 'Москва', value: 'Москва' },
-      { label: 'Санкт-Петербург', value: 'Санкт-Петербург' },
-      { label: 'Новосибирск', value: 'Новосибирск' },
-      { label: 'Екатеринбург', value: 'Екатеринбург' },
-      { label: 'Казань', value: 'Казань' },
-      { label: 'Нижний Новгород', value: 'Нижний Новгород' },
-      { label: 'Челябинск', value: 'Челябинск' },
-      { label: 'Самара', value: 'Самара' },
-      { label: 'Уфа', value: 'Уфа' },
-      { label: 'Ростов-на-Дону', value: 'Ростов-на-Дону' },
-   ]);
+  const dispatch = useDispatch();
+  const [error, setError] = useState(null);
+  const departureCity = useSelector(selectDepartureCity);
+  const arrivalCity = useSelector(selectArrivalCity);
+  const [inputValue, setInputValue] = useState("");
+  const [citiesList, setCitiesList] = useState([
+    { label: "Москва", value: "Москва" },
+    { label: "Санкт-Петербург", value: "Санкт-Петербург" },
+    { label: "Новосибирск", value: "Новосибирск" },
+    { label: "Екатеринбург", value: "Екатеринбург" },
+    { label: "Казань", value: "Казань" },
+    { label: "Нижний Новгород", value: "Нижний Новгород" },
+    { label: "Челябинск", value: "Челябинск" },
+    { label: "Самара", value: "Самара" },
+    { label: "Уфа", value: "Уфа" },
+    { label: "Ростов-на-Дону", value: "Ростов-на-Дону" },
+  ]);
 
-   const debouncedSearch = useDebounce(inputValue, 500);
+  const debouncedSearch = useDebounce(inputValue, 500);
 
-   useEffect(() => {
-      if (name === consts.depCity && departureCity) {
-         setInputValue(departureCity.name);
-      }
-      if (name === consts.arrCity && arrivalCity) {
-         setInputValue(arrivalCity.name);
-      }
-   }, [arrivalCity, departureCity, name]);
+  useEffect(() => {
+    if (name === consts.depCity && departureCity) {
+      setInputValue(departureCity.name);
+    }
+    if (name === consts.arrCity && arrivalCity) {
+      setInputValue(arrivalCity.name);
+    }
+  }, [arrivalCity, departureCity, name]);
 
-   const fetchCities = async (value) => {
-      setError(null);
-      try {
-         const response = await fetch(
-            `${process.env.REACT_APP_SEARCH_CITY}=${value}`
-         );
-         if (!response.ok) {
-            throw new Error('Что-то пошло не так');
-         }
-         const data = await response.json();
-         setCitiesList(
-            // eslint-disable-next-line dot-notation
-            data.map((city) => ({ label: city.name, value: city['_id'] }))
-         );
-      } catch (err) {
-         setError('Что-то пошло не так. Перезагрузите страницу');
-      }
-   };
-
-   useEffect(() => {
-      if (inputValue?.trim() === '') {
-         return;
-      }
-      if (debouncedSearch) {
-         fetchCities(inputValue);
-      }
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-   }, [debouncedSearch]);
-
-   const searchHandler = (value) => {
-      setInputValue(value);
-      if (value === '') {
-         dispatch(
-            changeSearchFields({ name, value: { id: null, name: null } })
-         );
-      }
-   };
-
-   const selectHandler = (data) => {
-      const cityName = citiesList?.find((item) => item.value === data)?.label;
-      setInputValue(cityName);
-      dispatch(
-         changeSearchFields({ name, value: { id: data, name: cityName } })
+  const fetchCities = async (value) => {
+    setError(null);
+    try {
+      const response = await fetch(
+        //   `${process.env.REACT_APP_SEARCH_CITY}=${value}`
+        `https://students.netoservices.ru/fe-diplom/routes/cities?name=${value}`
       );
-      dispatch(changeOffset(0));
-      dispatch(setCurrentPage(1));
-      dispatch(removeTrainData());
-   };
+      if (!response.ok) {
+        throw new Error("Что-то пошло не так");
+      }
+      const data = await response.json();
+      setCitiesList(
+        // eslint-disable-next-line dot-notation
+        data.map((city) => ({ label: city.name, value: city["_id"] }))
+      );
+    } catch (err) {
+      setError("Что-то пошло не так. Перезагрузите страницу");
+    }
+  };
 
-   return (
-      <>
-         {!error && (
-            <AutoComplete
-               options={citiesList}
-               onSelect={selectHandler}
-               onSearch={searchHandler}
-               value={inputValue}
-               allowClear
-            >
-               <input
-                  name={name}
-                  type="text"
-                  placeholder={placeholder}
-                  className={className}
-               />
-            </AutoComplete>
-         )}
+  useEffect(() => {
+    if (inputValue?.trim() === "") {
+      return;
+    }
+    if (debouncedSearch) {
+      fetchCities(inputValue);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [debouncedSearch]);
 
-         {
-            // подумать над этим блоком
-            error && <PopUP reason="error" message={error} />
-         }
-      </>
-   );
+  const searchHandler = (value) => {
+    setInputValue(value);
+    if (value === "") {
+      dispatch(changeSearchFields({ name, value: { id: null, name: null } }));
+    }
+  };
+
+  const selectHandler = (data) => {
+    const cityName = citiesList?.find((item) => item.value === data)?.label;
+    setInputValue(cityName);
+    dispatch(changeSearchFields({ name, value: { id: data, name: cityName } }));
+    dispatch(changeOffset(0));
+    dispatch(setCurrentPage(1));
+    dispatch(removeTrainData());
+  };
+
+  return (
+    <>
+      {!error && (
+        <AutoComplete
+          options={citiesList}
+          onSelect={selectHandler}
+          onSearch={searchHandler}
+          value={inputValue}
+          allowClear
+        >
+          <input
+            name={name}
+            type="text"
+            placeholder={placeholder}
+            className={className}
+          />
+        </AutoComplete>
+      )}
+
+      {
+        // подумать над этим блоком
+        error && <PopUP reason="error" message={error} />
+      }
+    </>
+  );
 }
 
 Direction.propTypes = {
-   name: PropTypes.string.isRequired,
-   placeholder: PropTypes.string.isRequired,
-   className: PropTypes.node.isRequired,
+  name: PropTypes.string.isRequired,
+  placeholder: PropTypes.string.isRequired,
+  className: PropTypes.node.isRequired,
 };
 
 export default Direction;
